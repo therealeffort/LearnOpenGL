@@ -186,6 +186,10 @@ set(GUEST_ARTICLES
 	8.guest/2022/6.physically_based_bloom
 )
 
+set(DigINS
+    9.DigIN/1.Blending
+)
+
 configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 include_directories(${CMAKE_BINARY_DIR}/configuration)
 
@@ -270,5 +274,9 @@ endforeach(CHAPTER)
 foreach(GUEST_ARTICLE ${GUEST_ARTICLES})
 	create_project_from_sources(${GUEST_ARTICLE} "")
 endforeach(GUEST_ARTICLE)
+
+foreach(DigIN ${DigINS})
+	create_project_from_sources(${DigIN} "")
+endforeach(DigIN)
 
 include_directories(${CMAKE_SOURCE_DIR}/includes)
